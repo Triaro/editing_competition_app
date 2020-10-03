@@ -1,0 +1,103 @@
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/blue";
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fab {
+    font-family: "Font Awesome 5 Brands", "fa-brands-400";
+    font-weight: 400;
+}
+
+.fas {
+    font-family: "Font Awesome 5 Free", "fa-solid-900";
+    font-weight: 900;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free", "fa-regular-400";
+    font-weight: 400;
+}
+
+// Custom tabstrip item class
+.navigation__item {
+    &:active,
+    &:active Label {
+        @include colorize($color: complementary);
+    }
+}
+
+// Common page class
+.page__content {
+    &-icon,
+    &-placeholder {
+        color: const(grey);
+        font-size: 20;
+        vertical-align: center;
+        horizontal-align: center;
+    }
+
+    &-icon {
+        font-size: 72;
+        vertical-align: top;
+        margin-top: 20%;
+    }
+}
+
+.fab-button {
+    height: 60;
+    width: 70; /// this is required on iOS - Android does not require width so you might need to adjust styles
+    margin: 15;
+    margin-top: 540;
+    border-radius: 25px;
+    background-color: #ff0000;
+    horizontal-align: right;
+    vertical-align: bottom;
+  }
+.stack{
+   
+}
+.form-input {
+    color: rgb(0, 0, 0);
+    width: 50%;
+    background-color: #eeeeee;
+    font-size: 20px;
+    placeholder-color: rgba(110, 110, 110, 0.349);
+    border-bottom-color: transparent;
+    border-bottom-width: 1;
+    
+  }
+.task-head{
+    background-color: aquamarine;
+    margin-top: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+.task-content{
+    margin: 30px;
+    font-size: 20px;
+}
+.textArea{
+    color: rgb(0, 0, 0);
+    width: 50%;
+    background-color: #eeeeee;
+    font-size: 20px;
+    placeholder-color: rgba(110, 110, 110, 0.349);
+    border-bottom-color: transparent;
+    border-bottom-width: 1;
+    width: 100%;
+}
+.btn-outline{
+  
+  font-size: 20px;
+  color: #ffffff;
+  background-color: aqua;
+}
+.imageCss{
+    background-color: #bbbbbb;
+    width: 100%;
+    height:150;
+    margin-top: 5;
+    margin-bottom: 5;
+}
