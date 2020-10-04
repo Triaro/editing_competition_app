@@ -3,13 +3,17 @@
 
         <ActionBar>
             <NavigationButton @tap="navigateBack" android.systemIcon="ic_menu_back"/>
-            <Label :text="item.name"></Label>
+            <Label :text="item.name" ></Label>
         </ActionBar>
 
-        <GridLayout>
-            <Image :src="item.imageSrc" :width="previewSize" :height="previewSize" stretch="aspectFit" class="imageCss"/>
-            <Label class="m-10 h3" :text="item.description" verticalAlignment="top"></Label>
-        </GridLayout>
+        <StackLayout>
+           <Image :src="item.src" :width="previewSize" :height="previewSize" stretch="aspectFit" verticalAlignment="top" class="imageCss"/>
+           
+            <TextView :text="item.description" editable="false" class="label"  />
+            
+        </StackLayout>
+           
+        
     </Page>
 </template>
 

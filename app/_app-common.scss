@@ -49,7 +49,7 @@
     height: 60;
     width: 70; /// this is required on iOS - Android does not require width so you might need to adjust styles
     margin: 15;
-    margin-top: 440;
+    margin-top: 500;
     border-radius: 25px;
     background-color: #ff0000;
     horizontal-align: right;
@@ -75,6 +75,10 @@
 .task-content{
     margin: 30px;
     font-size: 20px;
+}
+.label{
+    font-size: 20px;
+    background-color: #bbbbbb;
 }
 .textArea{
     color: rgb(0, 0, 0);

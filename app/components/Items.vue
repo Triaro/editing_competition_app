@@ -4,7 +4,6 @@
             <Label text="Home"></Label>
         </ActionBar>
 
-  <Label text="This is Label 1" top=""  right="" bottom="" left="" />
   <StackLayout>
      
            
@@ -58,7 +57,6 @@
 
 <script>
   import ItemDetails from "./ItemDetails";
-  import AssignTask from "./AssignTask";
   import{Bus} from "~/app.js";
   import Items from "./Items"
   import * as imagepicker from "nativescript-imagepicker";
@@ -66,8 +64,6 @@
   import { Label } from "tns-core-modules/ui/label";
  
  export default {
-    components: {AssignTask
-    },
     data() {
       
 
@@ -81,13 +77,7 @@
         previewSize: 300,
         thumbSize: 80,
         thumbSize: null,
-        items: [
-          {name: "Task1",
-           src: "",
-           description:"This is Task 1"
-          }
-        ]  
-    
+        items: [    ]      
         
       };
     },
@@ -103,7 +93,7 @@
 
             this.items.push({
               name: this.taskId,
-              src: this.image,
+              src: this.imageSrc,
               description: this.taskDesc
             }
             )
