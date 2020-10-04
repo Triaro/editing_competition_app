@@ -60,8 +60,8 @@ import { Observable } from 'tns-core-modules/data/observable';
                 this.startSelection(context);
             },
             onButtonTap(){
-             Bus.$emit('taskAdded',this.imageSrc);  //this.taskId
-                this.$navigateTo(Items, {
+             Bus.$emit('taskAdded',this.taskId); 
+              this.$navigateTo(Items, {
                   frame: 'items',
                   animated: true,
                   transition: {
