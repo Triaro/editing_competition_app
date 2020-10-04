@@ -8,7 +8,7 @@
 
         <StackLayout>
            <Image :src="item.src" :width="previewSize" :height="previewSize" stretch="aspectFit" verticalAlignment="top" class="imageCss"/>
-           
+            <Label text="Task description:" ></Label>
             <TextView :text="item.description" editable="false" class="label"  />
             
         </StackLayout>
