@@ -6,9 +6,9 @@
 
   <Label text="This is Label 1" top=""  right="" bottom="" left="" />
   <StackLayout>
-      <grid-layout rows="auto, *">
+     
            
-         <ListView for="item in items" @itemTap="onItemTap">
+         <ListView :visibility="isItemVisible ? 'visible' : 'collapsed'" for="item in items" @itemTap="onItemTap">
             <v-template>
               <StackLayout orientation="horizontal" class="task-content">
                     <Label :text="item.name" textWrap="true"></Label>
@@ -18,21 +18,9 @@
             </v-template>
                    
         </ListView>
-      <fab @tap="onFabTap"        
-        icon="~/images/ic_add_white.png"
-        class="fab-button"
-      ></fab> 
+      <fab @tap="onFabTap" :visibility="isItemVisible ? 'visible' : 'collapsed'" icon="~/images/ic_add_white.png" class="fab-button"></fab> 
 
-     
-      </grid-layout>
-
-
-</StackLayout>      
-
-
-
-
-       <ScrollView :visibility="isItemVisible ? 'visible' : 'collapsed'">
+       <ScrollView :visibility="isTaskVisible ? 'visible' : 'collapsed'">
           <StackLayout class="stack">
               <Label text="Let's Assign a task" class="task-head"></Label>
                 <FlexboxLayout>
@@ -59,6 +47,12 @@
           </StackLayout>
           
     </ScrollView>
+
+</StackLayout>      
+
+
+
+
     </Page>
 </template>
 
@@ -80,7 +74,8 @@
       return {
         taskId:'',
         taskDesc:'',
-        isItemVisible: false,
+        isTaskVisible: false,
+        isItemVisible: true,
         imageAssets: [],
         imageSrc: null,
         previewSize: 300,
@@ -103,7 +98,9 @@
                 this.startSelection(context);
             },
             onGenerateTap(){
-              this.isItemVisible=false;
+              this.isTaskVisible=false;
+              this.isItemVisible= true,
+
             this.items.push({
               name: this.taskId,
               src: this.image,
@@ -137,7 +134,8 @@
             },
            
       onFabTap(){
-             this.isItemVisible= true;
+              this.isItemVisible= false;
+             this.isTaskVisible= true;
              this.$navigateTo(Items);
              
        },
